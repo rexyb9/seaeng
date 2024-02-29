@@ -3,24 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
     <title>Seaeng</title>
   </head>
-  <body>
+  <body style="background-color: #1e1e1e">
     <div
       class="container d-flex justify-content-center align-items-center text-center min-vh-100"
     >
       <div class="d-flex flex-column text-white">
-        <h1 style="font-size: 40px;" class="text-uppercase">seaeng</h1>
+        <h1 style="font-size: 40px" class="text-uppercase">seaeng</h1>
         <p>Search web:</p>
         <div class="mb-3">
           <div class="d-flex flex-row">
             <input
               type="text"
               class="form-control"
-              style="margin-right: 5px;"
+              style="margin-right: 5px"
               id="inputText"
               size="50"
               placeholder="type here..."
@@ -59,7 +58,25 @@
         </div>
       </div>
     </div>
-    <script src="./js/index.js"></script>
+    <script>
+      const inputText = document.getElementById("inputText");
+
+      const search = () => {
+        if (!inputText.value) {
+          return alert("please input");
+        } else {
+          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
+            inputText.value
+          )}`;
+        }
+      };
+
+      window.addEventListener("keydown", ({ key }) => {
+        if (key === "Enter") {
+          search();
+        }
+      });
+    </script>
     <script src="./js/bootstrap.min.js"></script>
   </body>
 </html>
