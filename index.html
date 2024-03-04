@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <title>Seaeng</title>
   </head>
-  <body style="background-color: #1e1e1e">
+  <body>
     <div
       class="container d-flex justify-content-center align-items-center text-center min-vh-100"
     >
@@ -58,25 +59,7 @@
         </div>
       </div>
     </div>
-    <script>
-      const inputText = document.getElementById("inputText");
-
-      const search = () => {
-        if (!inputText.value) {
-          return alert("please input");
-        } else {
-          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
-            inputText.value
-          )}`;
-        }
-      };
-
-      window.addEventListener("keydown", ({ key }) => {
-        if (key === "Enter") {
-          search();
-        }
-      });
-    </script>
+    <script src="./js/index.js"></script>
     <script src="./js/bootstrap.min.js"></script>
   </body>
 </html>
